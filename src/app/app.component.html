@@ -1,4 +1,6 @@
 <div class="p-grid p-fluid p-mt-10">
+
+  <!-- Tabella di partenza -->
   <div class="p-col-5 p-md-3 drag-column" pDroppable="products">
     <p-table
       [value]="availableProducts"
@@ -36,6 +38,9 @@
       </ng-template>
     </p-table>
   </div>
+
+
+  <!-- Tabella di destinazione -->
   <div
     class="p-col-3 p-md-3 drag-column"
     pDroppable="products"
@@ -64,4 +69,5 @@
       </ng-template>
     </p-table>
   </div>
+  
 </div>
