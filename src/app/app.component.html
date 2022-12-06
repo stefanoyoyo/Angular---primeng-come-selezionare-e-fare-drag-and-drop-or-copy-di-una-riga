@@ -1,0 +1,67 @@
+<div class="p-grid p-fluid p-mt-10">
+  <div class="p-col-5 p-md-3 drag-column" pDroppable="products">
+    <p-table
+      [value]="availableProducts"
+      [columns]="cols"
+      [(selection)]="draggedProducts"
+    >
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th class="checkbox">
+            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+          </th>
+          <th></th>
+          <th *ngFor="let col of columns" pReorderableColumn>
+            Available
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template
+        pTemplate="body"
+        let-rowData
+        let-columns="columns"
+        let-index="rowIndex"
+      >
+        <tr pDraggable="products" [pReorderableRow]="index"  (onDragEnd)="dragEnd()">
+          <td>
+            <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+          </td>
+          <td>
+            <span class="pi pi-bars" pReorderableRowHandle></span>
+          </td>
+          <td *ngFor="let col of columns">
+            {{rowData[col.field]}}
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  <div
+    class="p-col-3 p-md-3 drag-column"
+    pDroppable="products"
+    (onDrop)="drop()"
+  >
+    <p-table [value]="selectedProducts" [columns]="cols">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th style="width:3rem"></th>
+          <th *ngFor="let col of columns" pReorderableColumn>
+            Selected
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template
+        pTemplate="body"
+        let-rowData
+        let-columns="columns"
+        let-index="rowIndex"
+      >
+        <tr>
+          <td *ngFor="let col of columns">
+            {{rowData[col.field]}}
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
