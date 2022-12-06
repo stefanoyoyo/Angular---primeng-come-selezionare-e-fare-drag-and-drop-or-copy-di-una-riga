@@ -27,7 +27,7 @@
       let-columns="columns"
       let-index="rowIndex"
     >
-      <tr pDraggable="products" [pReorderableRow]="index"  (onDragEnd)="dragEnd()">
+      <tr pDraggable="products" (onDragEnd)="dragEnd()" [pReorderableRow]="index">
         <td>
           <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
         </td>
