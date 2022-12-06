@@ -10,6 +10,7 @@
     [columns]="cols"
     [(selection)]="draggedProducts"
   >
+    <!-- Header -->
     <ng-template pTemplate="header" let-columns>
       <tr>
         <th class="checkbox">
@@ -21,6 +22,7 @@
         </th>
       </tr>
     </ng-template>
+    <!-- Body -->
     <ng-template
       pTemplate="body"
       let-rowData
