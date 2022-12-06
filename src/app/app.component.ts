@@ -26,6 +26,9 @@ export class AppComponent {
 
   drop() {
     this.selectedProducts = [...this.selectedProducts, ...this.draggedProducts];
+    console.log('on drop')
+    console.log('this.selectedProducts')
+    console.log(this.selectedProducts)
     // this.availableProducts = differenceBy(
     //   this.availableProducts,
     //   this.draggedProducts,
