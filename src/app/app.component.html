@@ -1,9 +1,10 @@
 <div class="p-grid p-fluid p-mt-10">
 
-  <!-- Tabella di partenza -->
+  <!-- Container tabella di partenza -->
   <div 
     class="p-col-5 p-md-3 drag-column" 
     pDroppable="products">
+      <!-- tabella di partenza -->
     <p-table
       [value]="availableProducts"
       [columns]="cols"
@@ -42,12 +43,13 @@
   </div>
 
 
-  <!-- Tabella di destinazione -->
+  <!-- Container tabella di destinazione -->
   <div
     class="p-col-3 p-md-3 drag-column"
     pDroppable="products"
     (onDrop)="drop()"
   >
+    <!-- tabella di destinazione -->
     <p-table [value]="selectedProducts" [columns]="cols">
       <ng-template pTemplate="header" let-columns>
         <tr>
